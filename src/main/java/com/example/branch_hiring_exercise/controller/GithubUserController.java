@@ -13,6 +13,6 @@ public class GithubUserController {
 
     @GetMapping("/{username}")
     public String getUserData(@PathVariable String username) {
-        return githubUserService.getUserData2(username);
+        return githubUserService.getUserData(username);
     }
 }
