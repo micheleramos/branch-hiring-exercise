@@ -23,12 +23,16 @@ public class GithubUserService {
 	public String getUserData2(String username) {
 
         // Get username's basic data
-        restTemplate.getForObject(String.format("https://api.github.com/users/%s", username), 
-        						Map.class);
+        String response1 = restTemplate.getForObject(String.format("https://api.github.com/users/%s", username), 
+        						Map.class).toString();
+        
+        System.out.println(response1);
         
         // Get username's repositories
-        restTemplate.getForObject(String.format("https://api.github.com/users/%s/repos", username), 
-				List.class);
+        String response2 = restTemplate.getForObject(String.format("https://api.github.com/users/%s/repos", username), 
+				List.class).toString();
+        
+        System.out.println(response2);
 
 
         return "You called the github apis!";
