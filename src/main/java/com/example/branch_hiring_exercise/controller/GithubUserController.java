@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class GithubUserController {
 	
-	private final GithubUserService githubUserService = new GithubUserService();
+	private final GithubUserService githubUserService;
 
 	@GetMapping("/{username}")
     public String getUserData(@PathVariable String username) {
