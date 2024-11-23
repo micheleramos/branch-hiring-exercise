@@ -22,7 +22,7 @@ public class GithubUserService {
         this.restTemplate = restTemplate;
     }
 	
-	public String getUserData(String username) {
+	public ExerciseResponseDto getUserData(String username) {
 
         // Get username's basic data
 		UserResponseDto userData = restTemplate.getForObject(String.format("https://api.github.com/users/%s", username), 
@@ -53,7 +53,7 @@ public class GithubUserService {
         response.setRepos(repoData);
         
 
-        return "You called the github apis!";
+        return response;
     }
 	
 	
